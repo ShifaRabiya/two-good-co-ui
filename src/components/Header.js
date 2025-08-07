@@ -39,11 +39,19 @@ const CompanyName = styled.div`
   line-height: 0.8;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const Logo = styled.img`
   margin-top: 2px;
   height: 60px;
+
+  @media (max-width: 768px) {
+    height: 30px;
+  }
 `;
 
 const RightColumn = styled.div`
@@ -92,7 +100,6 @@ const Icons = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-left: 80px;
 
   svg {
     cursor: pointer;
@@ -103,7 +110,9 @@ const Icons = styled.div`
   }
 
   @media (max-width: 768px) {
-    margin-left: auto;
+    position: absolute;
+    top: 24px;
+    right: 24px;
   }
 `;
 
