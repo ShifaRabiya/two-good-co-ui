@@ -20,6 +20,11 @@ const Left = styled.div`
   flex: 1;
   min-width: 300px;
 
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: center; /* Optional: centers the heading */
+  }
+
   h1 {
     font-family: 'Roboto', sans-serif;
     font-size: clamp(2rem, 4vw, 4rem);
@@ -32,6 +37,12 @@ const Left = styled.div`
 const Right = styled.div`
   flex: 1;
   max-width: 300px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
 
   p {
     font-family: 'Roboto', sans-serif;
