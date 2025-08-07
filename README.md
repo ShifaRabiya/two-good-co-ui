@@ -20,3 +20,12 @@ The design was provided as a **PDF**, along with image assets. The goal was to r
 - **Styled-components** (for scoped CSS)
 - **CSS3** – no Tailwind, no UI libraries
 - **Lucide-react** – for minimal SVG icons
+
+---
+
+## ✨ Features
+
+- Fully responsive layout
+- Exact spacing, font sizing, and component hierarchy
+- Hover states and overlay buttons
+- Modular component structure
