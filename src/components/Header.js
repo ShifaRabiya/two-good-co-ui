@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import logoImg from '../assets/logo_transparent.png';
 import { ShoppingCart, Menu } from 'lucide-react';
@@ -16,6 +16,13 @@ const HeaderWrapper = styled.header`
   border-bottom: 1px solid #ddd;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+  }
 `;
 
 const LeftColumn = styled.div`
@@ -41,9 +48,9 @@ const Logo = styled.img`
 
 const Nav = styled.nav`
   font-family: 'Poppins', sans-serif;
+  display: flex;
   align-items: center;
   gap: 24px;
-  display: flex;
 
   a {
     font-size: 1rem;
@@ -52,10 +59,20 @@ const Nav = styled.nav`
     color: #222;
     transition: color 0.2s ease;
     text-decoration: none;
-    //margin-right: 24px;
 
     &:hover {
       color: #777;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    display: ${props => (props.isMenuOpen ? 'flex' : 'none')};
+    margin-top: 16px;
+
+    a {
+      margin-left: 0;
     }
   }
 `;
@@ -69,16 +86,22 @@ const Icons = styled.div`
   svg {
     cursor: pointer;
 
-      &:hover {
+    &:hover {
       color: #777;
     }
+  }
+
+  @media (max-width: 768px) {
+    margin-left: auto;
   }
 `;
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <>
-      <FontStyles /> 
+      <FontStyles />
       <HeaderWrapper>
         <LeftColumn>
           <CompanyName>
@@ -88,14 +111,18 @@ const Header = () => {
           </CompanyName>
           <Logo src={logoImg} alt="Company logo" />
         </LeftColumn>
-        <Nav>
+
+        {/* Icons always visible */}
+        <Icons className="mobile-icons">
+          <Menu size={24} onClick={() => setIsMenuOpen(!isMenuOpen)} />
+          <ShoppingCart size={24} />
+        </Icons>
+
+        {/* Navigation - hide on small screens */}
+        <Nav isMenuOpen={isMenuOpen}>
           <a href="#">SHOP</a>
           <a href="#">CATERING</a>
           <a href="#">DONATE</a>
-          <Icons>
-            <Menu size={24} />
-            <ShoppingCart size={24} />
-          </Icons>
         </Nav>
       </HeaderWrapper>
     </>
