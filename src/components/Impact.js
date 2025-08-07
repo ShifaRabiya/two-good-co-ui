@@ -56,6 +56,8 @@ const Right = styled.div`
   padding-top: 100px;
 
   @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center; 
       justify-content: center;
       width: 100%;
   }
