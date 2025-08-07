@@ -33,6 +33,10 @@ const Content = styled.div`
     width: 97.5vw;
     height: auto;
     margin-bottom: 24px;
+
+    @media (max-width: 768px) {
+      width: 95vw;
+    }
   }
 `;
 
