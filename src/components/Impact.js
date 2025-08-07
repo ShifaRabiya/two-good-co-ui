@@ -54,6 +54,11 @@ const Right = styled.div`
   gap: 24px;
   flex: 0 0 auto;
   padding-top: 100px;
+
+  @media (max-width: 768px) {
+      justify-content: center;
+      width: 100%;
+  }
   
   img {
     width: 260px;

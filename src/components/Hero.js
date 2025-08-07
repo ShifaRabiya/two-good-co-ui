@@ -18,11 +18,15 @@ const Content = styled.div`
   h1 {
     margin-top: 40px;
     font-family: 'Poppins', serif;
-    font-size: clamp(7rem, 14vw, 11.5rem);
+    font-size: 11.5rem
     font-weight: 700;
     line-height: 0.9;
     margin-bottom: 24px;
     color: #111111;
+
+    @media (max-width: 768px) {
+      font-size: 3.5rem;
+    }
   }
 
   img {
@@ -38,7 +42,11 @@ const CardsSection = styled.div`
   justify-content: space-between;
   gap: 24px;
   padding: 24px 12px 48px;
-`;
+
+  @media (max-width: 768px) {
+      justify-content: center;
+    }
+`;      
 
 const Card = styled.div`
   position: relative;

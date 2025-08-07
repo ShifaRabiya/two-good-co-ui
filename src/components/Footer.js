@@ -94,6 +94,11 @@ const LogoWrapper = styled.div`
   img {
     height: 200px;
     width: auto;
+
+    @media (max-width: 768px) {
+      height: 100px;
+      width: auto;
+    }
   }
 `;
 
