@@ -46,6 +46,18 @@ const Logo = styled.img`
   height: 60px;
 `;
 
+const RightColumn = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`;
+
 const Nav = styled.nav`
   font-family: 'Poppins', sans-serif;
   display: flex;
@@ -54,7 +66,6 @@ const Nav = styled.nav`
 
   a {
     font-size: 1rem;
-    margin-left: 20px;
     font-weight: 400;
     color: #222;
     transition: color 0.2s ease;
@@ -81,7 +92,7 @@ const Icons = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-left: 48px;
+  margin-left: 80px;
 
   svg {
     cursor: pointer;
@@ -112,18 +123,18 @@ const Header = () => {
           <Logo src={logoImg} alt="Company logo" />
         </LeftColumn>
 
-        {/* Icons always visible */}
-        <Icons className="mobile-icons">
-          <Menu size={24} onClick={() => setIsMenuOpen(!isMenuOpen)} />
-          <ShoppingCart size={24} />
-        </Icons>
+        <RightColumn>
+          <Nav isMenuOpen={isMenuOpen}>
+            <a href="#">SHOP</a>
+            <a href="#">CATERING</a>
+            <a href="#">DONATE</a>
+          </Nav>
 
-        {/* Navigation - hide on small screens */}
-        <Nav isMenuOpen={isMenuOpen}>
-          <a href="#">SHOP</a>
-          <a href="#">CATERING</a>
-          <a href="#">DONATE</a>
-        </Nav>
+          <Icons className="mobile-icons">
+            <Menu size={24} onClick={() => setIsMenuOpen(!isMenuOpen)} />
+            <ShoppingCart size={24} />
+          </Icons>
+        </RightColumn>
       </HeaderWrapper>
     </>
   );

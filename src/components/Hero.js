@@ -18,7 +18,7 @@ const Content = styled.div`
   h1 {
     margin-top: 40px;
     font-family: 'Poppins', serif;
-    font-size: 11.5rem
+    font-size: 11.5rem;
     font-weight: 700;
     line-height: 0.9;
     margin-bottom: 24px;
@@ -30,12 +30,15 @@ const Content = styled.div`
   }
 
   img {
-    width: 97.5vw;
+    width: 100%;
+    max-width: 100%;
     height: auto;
     margin-bottom: 24px;
+    display: block;
 
     @media (max-width: 768px) {
-      width: 95vw;
+      width: 100%;  // Already handled by width: 100%
+      max-width: 100%;
     }
   }
 `;
@@ -46,6 +49,7 @@ const CardsSection = styled.div`
   justify-content: space-between;
   gap: 24px;
   padding: 24px 12px 48px;
+  margin-top: 48px;
 
   @media (max-width: 768px) {
       justify-content: center;
@@ -56,14 +60,23 @@ const Card = styled.div`
   position: relative;
   width: 100%;
   max-width: 400px;
-  height: 600px;
-  overflow: hidden;
+  height: auto;
 
   img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
-    display: block;
+  }
+`;
+
+const FullWidthImage = styled.img`
+  width: calc(100vw - 40px);
+  height: auto;
+  display: block;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 100%;
   }
 `;
 
@@ -112,8 +125,13 @@ const Hero = () => {
     <HeroSection>
       <Content>
         <h1>CHANGE<br />THE COURSE</h1>
-        <img src="https://images.pexels.com/photos/8131392/pexels-photo-8131392.jpeg" alt="Supporting visual" />
       </Content>
+
+      <FullWidthImage
+        src="https://images.pexels.com/photos/8131392/pexels-photo-8131392.jpeg"
+        alt="Supporting visual"
+      />
+
       <CardsSection>
         <Card>
           <img src={cat1} alt="New Goodies" />
