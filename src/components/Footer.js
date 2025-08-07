@@ -25,12 +25,23 @@ const TopRow = styled.div`
   max-width: 1200px;
   margin: 0 auto 32px;
   text-align: left;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const Column = styled.div`
   flex: 1;
   min-width: 160px;
   margin: 12px 0;
+
+  @media (max-width: 768px) {
+    order: 2;
+    text-align: center;
+  }
 
   p {
     font-size: 0.75rem;
@@ -58,9 +69,14 @@ const Column2 = styled.div`
   flex: 1;
   min-width: 160px;
   margin: 12px 0;
+  text-align: right;
+
+  @media (max-width: 768px) {
+    order: 3;
+    text-align: center;
+  }
 
   p {
-    text-align: right;
     font-size: 0.75rem;
     font-weight: 500;
     color: #777;
@@ -68,7 +84,6 @@ const Column2 = styled.div`
   }
 
   a {
-    text-align: right;
     font-weight: 450;
     display: block;
     font-size: 0.75rem;
@@ -90,6 +105,10 @@ const LogoWrapper = styled.div`
   justify-content: center;
   align-items: center;
   min-width: 100px;
+
+  @media (max-width: 768px) {
+    order: 1;
+  }
 
   img {
     height: 200px;
