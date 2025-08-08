@@ -8,12 +8,13 @@ import headerVideo from '../assets/header-video.mp4';
 
 const HeroSection = styled.section`
   background-color: #fff;
+  padding: 0 20px;
+  box-sizing: border-box;
 `;
 
 const Content = styled.div`
   width: 100%;
   max-width: 1200px;
-  padding: 0 12px;
   box-sizing: border-box;
 
   h1 {
@@ -49,7 +50,7 @@ const CardsSection = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 24px;
-  padding: 24px 12px 48px;
+  padding: 24px 0 48px;
   margin-top: 48px;
 
   @media (max-width: 768px) {
@@ -71,11 +72,9 @@ const Card = styled.div`
 `;
 
 const FullWidthVideo = styled.video`
-  width: calc(100vw - 40px);
+  width: 100%;
   height: auto;
   display: block;
-  margin-left:20px;
-  margin-right: 20px;
 
   @media (max-width: 768px) {
     width: 100%;
