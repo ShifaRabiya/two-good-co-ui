@@ -100,6 +100,7 @@ const Icons = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
+  margin-left: 72px;
 
   svg {
     cursor: pointer;
