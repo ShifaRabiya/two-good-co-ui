@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import cat1 from '../assets/cat1.avif';
 import cat2 from '../assets/cat2.avif';
 import cat3 from '../assets/cat3.avif';
+import headerVideo from '../assets/header-video.mp4';
 
 const HeroSection = styled.section`
   background-color: #fff;
@@ -69,10 +70,12 @@ const Card = styled.div`
   }
 `;
 
-const FullWidthImage = styled.img`
+const FullWidthVideo = styled.video`
   width: calc(100vw - 40px);
   height: auto;
   display: block;
+  margin-left:20px;
+  margin-right: 20px;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -127,9 +130,12 @@ const Hero = () => {
         <h1>CHANGE<br />THE COURSE</h1>
       </Content>
 
-      <FullWidthImage
-        src="https://images.pexels.com/photos/8131392/pexels-photo-8131392.jpeg"
-        alt="Supporting visual"
+      <FullWidthVideo
+        src= {headerVideo}
+        autoPlay
+        muted
+        loop
+        playsInline
       />
 
       <CardsSection>
